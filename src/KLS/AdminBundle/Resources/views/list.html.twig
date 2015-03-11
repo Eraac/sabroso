@@ -1,0 +1,42 @@
+{% extends 'KLSAdminBundle::layout.html.twig' %}
+
+{% set listIndex, titleIndex, headersIndex = 0, 1, 2 %}
+
+{% block smallTitle %}{{ smallTitle }}{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    {% javascripts output="js/routing.js"
+        'bundles/fosjsrouting/js/router.js'
+        'bundles/klsadmin/js/admin-delete.js'
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="col-lg-offset-2 col-lg-8">
+
+        {% if lists is not empty %}
+            {% for item in lists %}
+                {{ item|renderList(titles[loop.index0], type, headers) }}
+            {% endfor %}
+        {% else %}
+            <div class="text-center">
+                <h2>Aucun élément trouvé.</h2>
+                <a class="btn btn-primary" href="{{ path('sabroso_admin_add_' ~ type) }}">En ajouter !</a>
+            </div>
+        {% endif %}
+
+    </div>
+
+    {% for item in lists %}
+        {{ renderModal(item, type) }}
+    {% endfor %}
+
+{% endblock %}

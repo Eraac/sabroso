@@ -1,0 +1,18 @@
+{% set maxLengthArticle = 50 %}
+
+{% for item in list %}
+    <tr id="line-{{ item.id }}">
+        <td>{{ item.content|slice(0, maxLengthArticle) }}</td>
+        <td class="text-center">
+            {% if not item.url is null %}
+            <a href="{{ item.url }}">
+            {% endif %}
+                {{ item.source }}
+            {% if not item.url is null %}
+            </a>
+            {% endif %}
+        </td>
+        <td class="text-center"><a href="{{ path('sabroso_admin_edit_' ~ type|lower, {'id': item.id}) }}"><span class="fa fa-edit"></span></a></td>
+        <td class="text-center"><button type="button" data-toggle="modal" data-target="#{{ item.id }}" class="btn btn-xs btn-danger"><span class="fa fa-trash"></span></button></td>
+    </tr>
+{% endfor %}

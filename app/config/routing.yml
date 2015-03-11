@@ -1,0 +1,25 @@
+kls_core:
+    resource: "@KLSCoreBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+kls_index:
+    resource: "@KLSIndexBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+kls_user:
+    resource: "@KLSUserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+kls_admin:
+    resource: "@KLSAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"

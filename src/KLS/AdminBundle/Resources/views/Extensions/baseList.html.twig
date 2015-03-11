@@ -1,0 +1,27 @@
+{% if list is not empty %}
+
+{% if title is not empty %}
+<h2 class="text-warning">{{ title }}</h2>
+{% endif %}
+
+<table id="list" class="table table-striped">
+    {% if headers is not empty %}
+
+    {% set headers = headers|merge(['Editer','Supprimer']) %}
+
+    <thead>
+        <tr>
+        {% for header in headers %}
+            <td class="text-center">{{ header }}</td>
+        {% endfor %}
+        </tr>
+    </thead>
+    {% endif %}
+
+    <tbody>
+
+    {% include 'KLSAdminBundle:' ~ type ~ ':list' ~ type ~'.html.twig' ignore missing with {'list': list} %}
+
+    </tbody>
+</table>
+{% endif %}

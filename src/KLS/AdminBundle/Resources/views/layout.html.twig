@@ -1,0 +1,70 @@
+{% extends "KLSCoreBundle::base.html.twig" %}
+
+{% block title %}Sabroso admin{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets filter="cssrewrite" output="css/admin.css"
+        'bundles/klsadmin/css/admin.css'
+    %}
+        <link href="{{ asset_url }}" rel="stylesheet">
+    {% endstylesheets %}
+{% endblock %}
+
+
+{% block body %}
+
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="row">
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{{ path('sabroso_admin') }}">Sabroso admin</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="{{ path('sabroso_index') }}">Accueil du site</a></li>
+                        <li><a href="{{ path('sabroso_admin') }}">Administration</a></li>
+                    </ul>
+
+                    {% if app.user %}
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="{{ path('fos_user_security_logout') }}">Déconnexion</a></li>
+                    </ul>
+                    {% endif %}
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+
+            {% for type in ['info', 'success', 'error'] %}
+                {% for message in app.session.flashbag.get(type) %}
+                    <div class="alert alert-{{ type }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+
+            <div class="page-header text-success">
+                <h1>Panel d'administration <small>{% block smallTitle %}pour Sabroso{% endblock %}</small></h1>
+            </div>
+
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </div>
+
+    {# footer #}
+
+{% endblock %}

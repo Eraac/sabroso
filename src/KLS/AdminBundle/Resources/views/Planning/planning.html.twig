@@ -1,0 +1,13 @@
+{% extends 'KLSAdminBundle::form.html.twig' %}
+
+
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts output="js/admin-form-planning.js"
+        'bundles/klsadmin/js/admin-form-planning.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+
+{% block smallTitle %}Planning{% endblock %}

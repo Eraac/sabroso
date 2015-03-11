@@ -1,0 +1,463 @@
+/* === FONT === */
+/* Karatula */
+@font-face {
+	font-family: "Karatula";
+	src: url('../bundles/klsindex/fonts/Karatula/KARAN___.ttf');
+}
+
+@font-face {
+	font-family: "Karatula";
+	font-style: italic;
+	src: url('../bundles/klsindex/fonts/Karatula/KARAI___.ttf');
+}
+
+@font-face {
+	font-family: "Karatula";
+	font-weight: bold;
+	src: url('../bundles/klsindex/fonts/Karatula/KARAB___.ttf');
+}
+
+@font-face {
+	font-family: "Karatula";
+	font-weight: bold;
+	font-style: italic;
+	src: url('../bundles/klsindex/fonts/Karatula/KARABI__.ttf');
+}
+
+/* Komika-Title */
+@font-face {
+	font-family: "Komika-Title";
+	src: url('../bundles/klsindex/fonts/Komika-Title/KomikaTitle.ttf');
+}
+
+@font-face {
+	font-family: "Komika-Title";
+	font-style: italic;
+	src: url('../bundles/klsindex/fonts/Komika-Title/KomikaTitle-Kaps.ttf');
+}
+
+@font-face {
+	font-family: "Komika-Title";
+	font-weight: bold;
+	src: url('../bundles/klsindex/fonts/Komika-Title/KomikaTitle-Wide.ttf');
+}
+
+@font-face {
+	font-family: "Komika-Title";
+	font-weight: bold;
+	font-style: italic;
+	src: url('../bundles/klsindex/fonts/Komika-Title/KomikaTitle-Paint.ttf');
+}
+
+/* Pacifico */
+@font-face {
+	font-family: "Pacifico";
+	src: url('../bundles/klsindex/fonts/pacifico/Pacifico.ttf');
+}
+/* === END FONT === */
+
+
+body {
+	margin-top: 80px;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+.center-middle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+cite,
+.sabroso {
+	color: #BF2932;
+	font-family: "Pacifico";
+}
+
+/* === MARGING === */
+h2 {
+	margin-top: 0;
+	margin-bottom: 50px;
+	font-family: "Pacifico";
+	font-size: 56px;
+}
+
+h3,
+h4 {
+	font-family: "Komika-Title";
+}
+
+h3 {
+	font-size: 36px;
+	margin-left: 10px;
+}
+
+h4 {
+	font-size: 28px;
+}
+
+#welcome,
+#recipe,
+#where,
+#presse,
+#contact {
+	margin: 0;
+	padding: 30px 0 40px;
+}
+
+#welcome,
+#where {
+	padding: 50px 0 70px;
+}
+/* === END MARGING === */
+
+
+/* === NAV === */
+header {
+	background-color: rgba(255, 255, 255, 0.7);
+}
+
+header .logo-header img {
+	height: 70px;
+}
+
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+	z-index: 9;
+}
+
+nav ul {
+	width: 100%;
+}
+
+nav ul li.logo-header a {
+	padding: 5px 0 0 0;
+}
+
+nav ul li.logo-header a:focus {
+	background-color: inherit;
+}
+
+nav ul li {
+	text-align: center;
+	width: 14.28571428571429%;
+	font-family: 'Komika-Title';
+	font-size: 22px;
+}
+
+nav .navbar-text {
+	margin-top: 22px;
+}
+
+nav ul li a {
+	color: #03A2AA;
+}
+
+.navbar nav ul li a:hover {
+	background-color: inherit;
+	color: #018F96;
+}
+
+.navbar-brand {
+	color: #FFF;
+	font-family: "Pacifico";
+	font-size: 24px;
+}
+
+.navbar-brand:hover {
+	color: #FFF;
+}
+
+.icon-bar {
+	background-color: #FFF;
+}
+/* === END NAV === */
+
+
+/* === LOGO === */
+#logo {
+	text-align: center;
+	position: fixed;
+	margin: -1px -110px;
+	left: 50%;
+	top: 80px;
+	z-index: 10;
+}
+
+#circle {
+	display: inline-block;
+	height: 85px;
+	width: 220px;
+	background-color: #FFF;
+	border-bottom-left-radius: 50%;
+	border-bottom-right-radius: 50%;
+	box-shadow: 0px 5px 10px #EEE;
+}
+
+#logo img {
+	height: 85px;
+	margin-top: -20px;
+}
+/* === END LOGO === */
+
+
+/* === TOP ===*/
+#top {
+	background-image: url('../bundles/klsindex/images/feuilles.png');
+	margin-top: -80px;
+	min-height: 100%;
+}
+
+#top img {
+	height: 400px;
+}
+/* === END TOP === */
+
+
+/* === WELCOME === */
+#welcome h2 {
+	color: #B3B3B3;
+}
+
+#welcome p {
+	font-size: 22px;
+	text-align: center;
+	margin-top: 35px;
+}
+/* === END WELCOME === */
+
+
+/* === RECIPE === */
+#recipe {
+	background-color: #03A2AA;
+	text-align: center;
+}
+
+#recipe h2,
+#recipe h4 {
+	color: #FFF;
+}
+
+#recipe h3 {
+	text-align: left;
+	color: #1D1D1B;
+	margin-bottom: 15px;
+}
+
+#recipe h4 {
+	margin-bottom: 0;
+}
+
+#recipe article {
+	margin-bottom: 50px;
+}
+
+#recipe .ingredient {
+	font-style: italic;
+	color: #50545F;
+	font-size: 14px;
+}
+
+#recipe #other-ingredient {
+	color: #1D1D1B;
+	font-family: "Komika-Title";
+	font-size: 28px;
+	line-height: 20px;
+	margin-top: 10px;
+}
+
+#recipe-third-block {
+    clear: both;
+}
+/* === END RECIPE === */
+
+
+/* === WHERE === */
+#where #first-block-where,
+#where #second-block-where,
+#where #third-block-where,
+#where #fourth-block-where,
+#where #fifth-block-where {
+	background-color: #03A2AA;
+	color: #FFF;
+	border: 1px solid #DDD;
+	border-radius: 3px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+#where #first-block-where:hover,
+#where #second-block-where:hover,
+#where #third-block-where:hover,
+#where #fourth-block-where:hover,
+#where #fifth-block-where:hover {
+	box-shadow: 0 0 5px #DDD;
+}
+
+#where article p {
+	text-align: center;
+	margin: 5px 0;
+	font-family: "Pacifico";
+	font-size: 20px;
+}
+
+#where h3 {
+	margin-top: 5px;
+}
+
+.map {
+    height: 300px;
+}
+/* === END WHERE === */
+
+
+/* === GALLERY === */
+#gallery {
+	border-top: 5px #03A2AA dashed;
+	border-bottom: 5px #03A2AA dashed;
+}
+/* === END GALLERY === */
+
+
+/* === PRESSE === */
+#presse {
+	background-color: #03A2AA;
+	color: #FFF;
+	text-align: center;
+	margin: 30px 0;
+}
+
+#presse blockquote footer {
+	color: #F5F5F5;
+	font-style: italic;
+}
+
+#presse cite {
+	font-size: 22px;
+}
+/* === END PRESSE === */
+
+
+/* === CONTACT === */
+#contact {
+	background-color: #F2EDE9;
+	color: #4D545E;
+}
+
+#first-p-contact {
+	font-size: 20px;
+	font-family: "Komika-Title";
+}
+
+#contact .form-control,
+#contact .form-control {
+	border-radius: 0;
+}
+
+#contact button {
+	background-color: #03A2AA;
+	font-weight: bold;
+	color: #FFF;
+	border-radius: 0;
+}
+
+#contact button:hover {
+	background-color: #157B89;
+}
+/* === END CONTACT === */
+
+
+/* === MAP === */
+#map-monday,
+#map-tuesday,
+#map-wednesday,
+#map-thursday,
+#map-friday {
+	min-height: 250px;
+}
+
+#map-monday img,
+#map-tuesday img,
+#map-wednesday img,
+#map-thursday img,
+#map-friday img {
+
+}
+
+.modal-body {
+	padding: 0;
+}
+/* === END MAP === */
+
+.blue {
+	color: #03A2AA;
+}
+
+.gras {
+	font-weight: bold;
+}
+
+.fa-twitter {
+	color: #33CCFF;
+}
+
+.fa-facebook {
+	color: #385998;
+}
+
+@media (min-width: 768px) {
+	.navbar-nav > li > a {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+
+	.navbar-brand {
+		display: none;
+	}
+}
+
+@media (max-width: 991px) {
+	#recipe .center-middle {
+		display: inherit;
+	}
+}
+
+@media (max-width: 768px) {
+
+	#title-burger-menu {
+		display: inline-block;
+	}
+
+	#logo {
+		display: none;
+	}
+
+	.logo-header a img {
+		display: none;
+	}
+
+	nav ul li {
+		width: 100%;
+	}
+
+	header {
+		max-height: inherit;
+	}
+
+	.navbar-brand {
+		color: #03A2AA;
+	}
+
+	.icon-bar {
+		background-color: #03A2AA;
+	}
+
+	#top img {
+		width: 90%;
+		margin: auto;
+	}
+}

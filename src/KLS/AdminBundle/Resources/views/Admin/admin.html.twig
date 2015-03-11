@@ -1,0 +1,64 @@
+{% extends 'KLSAdminBundle::layout.html.twig' %}
+
+
+{% block javascripts %}
+    {% javascripts output="js/routing.js"
+        'bundles/fosjsrouting/js/router.js'
+        'bundles/klsadmin/js/admin-handlePress.js'
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="col-lg-6">
+        <div class="carre text-center">
+            <h2>Planning</h2>
+            <span class="fa fa-map-marker fa-5x"></span>
+            <div>
+                <a href="{{ path("sabroso_admin_add_planning") }}" class="btn btn-success">Ajouter</a>
+                <a href="{{ path("sabroso_admin_list_planning") }}" class="btn btn-warning">Modifier</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="carre text-center">
+            <h2>Menu</h2>
+            <span class="fa fa-cutlery fa-5x"></span>
+            <div>
+                <a href="{{ path("sabroso_admin_add_menu") }}" class="btn btn-success">Ajouter</a>
+                <a href="{{ path("sabroso_admin_list_menu") }}" class="btn btn-warning">Modifier</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="carre text-center">
+            <h2>Gallerie</h2>
+            <span class="fa fa-image fa-5x"></span>
+            <div>
+                <a href="{{ path("sabroso_admin_add_gallery") }}" class="btn btn-success">Ajouter</a>
+                <a href="{{ path("sabroso_admin_list_gallery") }}" class="btn btn-warning">Modifier</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="carre text-center">
+            <h2>Presse <span id="statusPress" class="{% if pressIsEnable %}text-success">Activé{% else %}text-danger">Désactivé{% endif %}</span></h2>
+            <span class="fa fa-newspaper-o fa-5x"></span>
+            <div>
+                <button id="enablePressButton" href="{{ path("sabroso_admin_enable_press") }}" class="btn btn-primary" {% if pressIsEnable %}disabled{% endif %}>Activer</button>
+                <button id="disablePressButton" href="{{ path("sabroso_admin_disable_press") }}" class="btn btn-default" {% if not pressIsEnable %}disabled{% endif %}>Désactiver</button>
+                <a id="addPressButton" href="{{ path("sabroso_admin_add_press") }}" class="btn btn-success">Ajouter</a>
+                <a id="editPressButton" href="{{ path("sabroso_admin_list_press") }}" class="btn btn-warning">Modifier</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,33 @@
+.carre {
+    border: 1px solid #EEE;
+    border-radius: 2px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.carre h2 {
+    margin: 10px 0;
+}
+
+.carre span {
+    margin-bottom: 10px;
+}
+
+.fa-edit {
+    color: orange;
+}
+
+#list thead {
+    font-weight: bold;
+}
+
+.img-menu {
+    max-width: 100%;
+}
+
+#kls_adminbundle_planning_latlng_lat,
+#kls_adminbundle_planning_latlng_lng,
+label[for="kls_adminbundle_planning_latlng_lat"],
+label[for="kls_adminbundle_planning_latlng_lng"]{
+    display: none;
+}
