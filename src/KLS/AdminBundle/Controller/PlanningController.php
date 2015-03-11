@@ -24,7 +24,7 @@ class PlanningController extends Controller
 
     /**
      * @Route("/add/planning", name="sabroso_admin_add_planning")
-     * @Template("KLSAdminBundle:Planning:Planning.html.twig")
+     * @Template("KLSAdminBundle:Planning:planning.html.twig")
      */
     public function addPlanningAction(Request $request)
     {
@@ -77,7 +77,7 @@ class PlanningController extends Controller
     /**
      * @Route("/edit/planning/{id}", name="sabroso_admin_edit_planning")
      * @ParamConverter("planning", class="KLSAdminBundle:Planning")
-     * @Template("KLSAdminBundle:Planning:Planning.html.twig")
+     * @Template("KLSAdminBundle:Planning:planning.html.twig")
      */
     public function editPlanningAction(Request $request, Planning $planning)
     {
