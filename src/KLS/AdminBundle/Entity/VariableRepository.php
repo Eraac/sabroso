@@ -28,6 +28,6 @@ class VariableRepository extends EntityRepository
             ->where('v.name = :name')
             ->setParameter('name', $name);
 
-        return $qb->getQuery()->getSingleResult();
+        return $qb->getQuery()->getOneOrNullResult();
     }
 }
