@@ -3,11 +3,6 @@ kls_index:
     type:     annotation
     prefix:   /
 
-kls_user:
-    resource: "@KLSUserBundle/Controller/"
-    type:     annotation
-    prefix:   /
-
 kls_admin:
     resource: "@KLSAdminBundle/Controller/"
     type:     annotation
