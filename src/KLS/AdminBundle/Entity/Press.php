@@ -3,6 +3,7 @@
 namespace KLS\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Press
@@ -27,6 +28,7 @@ class Press
      * @var string
      *
      * @ORM\Column(name="content", type="text")
+     * @Assert\NotBlank(message="Le contenu de l'article ne peut être vide.")
      */
     private $content;
 
@@ -34,6 +36,13 @@ class Press
      * @var string
      *
      * @ORM\Column(name="source", type="string", length=255)
+     * @Assert\NotBlank(message="La source de l'article ne peut être vide.")
+     * @Assert\Length(
+     *      min = "1",
+     *      max = "255",
+     *      minMessage = "La source doit faire au moins {{ limit }} caractères",
+     *      maxMessage = "La source ne peut pas être plus longue que {{ limit }} caractères"
+     * )
      */
     private $source;
 
@@ -41,6 +50,10 @@ class Press
      * @var string
      *
      * @ORM\Column(name="url", type="string", length=255, nullable=true)
+     * @Assert\Length(
+     *      max = "255",
+     *      maxMessage = "L'url ne peut pas être plus longue que {{ limit }} caractères"
+     * )
      */
     private $url;
 

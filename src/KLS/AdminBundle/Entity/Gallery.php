@@ -4,6 +4,7 @@ namespace KLS\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use KLS\CoreBundle\Entity\Image;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Gallery
@@ -26,6 +27,13 @@ class Gallery
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
+     * @Assert\NotBlank(message="Le nom ne peut être vide.")
+     * @Assert\Length(
+     *      min = "1",
+     *      max = "255",
+     *      minMessage = "Le nom doit faire au moins {{ limit }} caractères",
+     *      maxMessage = "Le nom ne peut pas être plus long que {{ limit }} caractères"
+     * )
      */
     private $name;
 
@@ -33,6 +41,7 @@ class Gallery
      * @var integer
      *
      * @ORM\Column(name="position", type="integer")
+     * @Assert\NotBlank(message="La position ne peut être vide.")
      */
     private $position;
 
@@ -40,6 +49,7 @@ class Gallery
      * @var file
      *
      * @ORM\OneToOne(targetEntity="KLS\CoreBundle\Entity\Image", cascade={"persist", "remove"})
+     * @Assert\Valid
      */
     private $image;
 

@@ -27,6 +27,8 @@ class Planning
      * @var \DateTime
      *
      * @ORM\Column(name="date", type="date", unique=true)
+     * @Assert\Date()
+     * @Assert\NotBlank(message="La date ne peut être vide.")
      */
     private $date;
 
@@ -34,6 +36,7 @@ class Planning
      * @var float
      *
      * @ORM\Column(name="lat", type="float")
+     * @Assert\NotBlank()
      */
     private $lat;
 
@@ -41,6 +44,7 @@ class Planning
      * @var float
      *
      * @ORM\Column(name="lng", type="float")
+     * @Assert\NotBlank()
      */
     private $lng;
 
@@ -48,6 +52,13 @@ class Planning
      * @var string
      *
      * @ORM\Column(name="address", type="string", length=255)
+     * @Assert\NotBlank(message="L'adresse ne peut être vide.")
+     * @Assert\Length(
+     *      min = "1",
+     *      max = "255",
+     *      minMessage = "L'adresse doit faire au moins {{ limit }} caractères",
+     *      maxMessage = "L'adresse ne peut pas être plus longue que {{ limit }} caractères"
+     * )
      */
     private $address;
 

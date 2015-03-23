@@ -4,6 +4,7 @@ namespace KLS\CoreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Validator\Constraints as Assert;
 
 
 /**
@@ -35,6 +36,13 @@ class Image
      * @var string
      *
      * @ORM\Column(name="alt", type="string", length=255)
+     * @Assert\NotBlank(message="La description de l'image ne peut être vide.")
+     * @Assert\Length(
+     *      min = "1",
+     *      max = "255",
+     *      minMessage = "La description doit faire au moins {{ limit }} caractères",
+     *      maxMessage = "La description ne peut pas être plus longue que {{ limit }} caractères"
+     * )
      */
     private $alt;
 
