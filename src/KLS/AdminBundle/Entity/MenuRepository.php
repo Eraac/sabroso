@@ -25,7 +25,6 @@ class MenuRepository extends EntityRepository
     public function getRecipes($max)
     {
         $qb = $this->createQueryBuilder('m')
-                ->join('m.image', 'i')
                 ->where('m.position != 0')
                 ->setMaxResults($max);
 

@@ -18,8 +18,19 @@ class MenuType extends AbstractType
         $builder
             ->add('name', 'text', array('label' => "Nom de la recette"))
             ->add('description', 'textarea') // TODO: Mettre un éditeur HTML
-            ->add('position', 'choice', array('choices' => array("Non affiché", "En haut à gauche", "En haut à droite", "En bas à gauche", "En bas à droite")))
-            ->add('image', new ImageType())
+            ->add('position', 'choice', array('choices' =>
+                array(
+                    "Non affiché",
+                    "En haut à gauche (avec image)",
+                    "En haut à droite (avec image)",
+                    "En bas à gauche (avec image)",
+                    "En bas à droite (avec image)",
+                    "Les autres (1er)",
+                    "Les autres (2ème)",
+                    "Les autres (3ème)",
+                    "Les autres (4ème)"
+                )))
+            ->add('image', new ImageType(), array('required' => false))
             ->add('Envoyer', 'submit', array('attr' => array('class' => 'btn btn-success')))
         ;
     }

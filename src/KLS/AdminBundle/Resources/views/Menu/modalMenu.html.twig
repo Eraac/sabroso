@@ -1,4 +1,7 @@
-Voulez-vous supprimer l'image ({{ modal.name }}) ?
+Voulez-vous supprimer ({{ modal.name }}) ?
+
+{% if not modal.image is null %}
 <div>
     <img class="img-menu" src="{{ asset(modal.image.webPath) }}" >
 </div>
+{% endif %}

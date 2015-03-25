@@ -12,7 +12,7 @@ use KLS\AdminBundle\Entity\Press;
 
 class IndexController extends Controller
 {
-    const MAX_RECIPES = 4;
+    const MAX_RECIPES = 8;
     const MAX_PLANNING = 5;
 
     /**
