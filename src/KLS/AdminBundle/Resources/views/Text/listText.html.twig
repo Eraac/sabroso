@@ -1,0 +1,8 @@
+{% set maxLengthArticle = 50 %}
+
+{% for item in list %}
+    <tr id="line-{{ item.id }}">
+        <td>{{ item.description }}</td>
+        <td class="text-center"><a href="{{ path('sabroso_admin_edit_' ~ type|lower, {'id': item.id}) }}"><span class="fa fa-edit"></span></a></td>
+    </tr>
+{% endfor %}

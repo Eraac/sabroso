@@ -7,7 +7,11 @@
 <table id="list" class="table table-striped">
     {% if headers is not empty %}
 
-    {% set headers = headers|merge(['Editer','Supprimer']) %}
+    {% if type != "Text" %}
+        {% set headers = headers|merge(['Editer','Supprimer']) %}
+    {% else %}
+        {% set headers = headers|merge(['Editer']) %}
+    {% endif %}
 
     <thead>
         <tr>

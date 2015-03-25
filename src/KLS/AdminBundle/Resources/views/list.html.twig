@@ -29,7 +29,9 @@
         {% else %}
             <div class="text-center">
                 <h2>Aucun élément trouvé.</h2>
+                {% if type != "text" %}
                 <a class="btn btn-primary" href="{{ path('sabroso_admin_add_' ~ type) }}">En ajouter !</a>
+                {% endif %}
             </div>
         {% endif %}
 
