@@ -33,7 +33,7 @@ class IndexController extends Controller
         return array('text' => $text, 'days' => $days, 'recipes' => $recipes, 'gallery' => $gallery, 'press' => $press);
     }
 
-    private function getPress(EntityManager $em)
+    private function getPress(EntityManager &$em)
     {
         $pressIsEnable = $em->getRepository('KLSAdminBundle:Variable')->getValue(Press::PRESS_VARIABLE_NAME, false);
 
@@ -46,7 +46,7 @@ class IndexController extends Controller
         return $press;
     }
 
-    private function getNextDays(EntityManager $em)
+    private function getNextDays(EntityManager &$em)
     {
         $timestamp = strtotime('today');
 
@@ -60,7 +60,7 @@ class IndexController extends Controller
         return $planning;
     }
 
-    private function getGallery(EntityManager $em)
+    private function getGallery(EntityManager &$em)
     {
         $repository = $em->getRepository('KLSAdminBundle:Gallery');
 
@@ -69,7 +69,7 @@ class IndexController extends Controller
         return $gallery;
     }
 
-    private function getRecipes(EntityManager $em)
+    private function getRecipes(EntityManager &$em)
     {
         $repository = $em->getRepository('KLSAdminBundle:Menu');
 
@@ -78,9 +78,17 @@ class IndexController extends Controller
         return $recipes;
     }
 
-    private function getText(EntityManager $em)
+    private function getText(EntityManager &$em)
     {
-        // TODO
-        return null;
+        $repository = $em->getRepository('KLSAdminBundle:Text');
+
+        $contents = $repository->findAll();
+        $text = array();
+
+        foreach ($contents as $content) {
+            $text[$content->getKey()] = $content->getContent();
+        }
+
+        return $text;
     }
 }

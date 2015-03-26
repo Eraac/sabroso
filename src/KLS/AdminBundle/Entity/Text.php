@@ -26,15 +26,21 @@ class Text
      * @var string
      *
      * @ORM\Column(name="description", type="string", length=255)
-     * @Assert\NotBlank(message="Le contenu de l'article ne peut être vide.")
      */
     private $description;
 
     /**
      * @var string
      *
+     * @ORM\Column(name="key", type="string", length=45)
+     */
+    private $key;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="content", type="text")
-     * @Assert\NotBlank(message="Le contenu de l'article ne peut être vide.")
+     * @Assert\NotBlank(message="Le contenu ne peut être vide.")
      */
     private $content;
 
@@ -70,6 +76,29 @@ class Text
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Set key
+     *
+     * @param string $key
+     * @return Text
+     */
+    public function setKey($key)
+    {
+        $this->key = $key;
+
+        return $this;
+    }
+
+    /**
+     * Get key
+     *
+     * @return string
+     */
+    public function getKey()
+    {
+        return $this->key;
     }
 
     /**
